@@ -6,26 +6,31 @@ public class HW2 {
 
     public static void main(String[] args) {
         int n = 15;
-        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.println(Arrays.toString(replace(arr)));
-        int[] arr1 = new int[8];
-//        plusThree(arr1);
-        System.out.println(Arrays.toString(plusThree1(arr1)));
+//        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         int[] arr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(Arrays.toString(more6Multiply2(arr2)));
+        System.out.println(arr2);
         System.out.println(Arrays.toString(more6Multiply2(arr2)));
-        int[] arr4 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println(minElement(arr4));
-        System.out.println(maxElement(arr4));
-        int[][] arr3 = new int[n][n];
-        System.out.println(Arrays.deepToString(diagonal(arr3)));
-
-        int[] arr5 = {-1, 5, 3, 2, 11, 4, 5, 2, 4, 5, 9, -1};
-        System.out.println(checkBalance(arr5));
-        System.out.println(checkBalance1(arr5));
-        System.out.println("TEST GIT");
-        int[] arr6 = {1, 2, 3, 4, 5};
-
-        System.out.println(Arrays.toString(replaceElement(arr6, -4)));
+        System.out.println("-------");
+        System.out.println(arr2);
+//        int[] arr1 = new int[8];
+////        plusThree(arr1);
+//        System.out.println(Arrays.toString(plusThree1(arr1)));
+//        int[] arr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(Arrays.toString(more6Multiply2(arr2)));
+//        int[] arr4 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(minElement(arr4));
+//        System.out.println(maxElement(arr4));
+//        int[][] arr3 = new int[n][n];
+//        System.out.println(Arrays.deepToString(diagonal(arr3)));
+//
+//        int[] arr5 = {-1, 5, 3, 2, 11, 4, 5, 2, 4, 5, 9, -1};
+//        System.out.println(checkBalance(arr5));
+//        System.out.println(checkBalance1(arr5));
+//        System.out.println("TEST GIT");
+//        int[] arr6 = {1, 2, 3, 4, 5};
+//
+//        System.out.println(Arrays.toString(replaceElement(arr6, -4)));
     }
 
     public static int[] replaceElement(int[] arr, int elemenChange) {
