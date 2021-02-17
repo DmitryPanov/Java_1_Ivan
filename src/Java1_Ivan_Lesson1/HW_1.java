@@ -38,16 +38,17 @@ public class HW_1 {
 //        System.out.println(Arrays.toString(d));
 //        System.out.println(Arrays.toString(f));
 //        System.out.println(Arrays.toString(str));
+//
+//        int[][] arr = new int[7][10];
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr[i].length; j++) {
+//                arr[i][j] = i * j;
+////                System.out.printf("%7d", arr[i][j]);
+//            }
+////            System.out.println();
+//        }
 
-        int[][] arr = new int[7][10];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = i * j;
-//                System.out.printf("%7d", arr[i][j]);
-            }
-//            System.out.println();
-        }
-        System.out.println(Arrays.deepToString(arr));
+
     }
 
     public static float result(int a, int b, int c, int d) {

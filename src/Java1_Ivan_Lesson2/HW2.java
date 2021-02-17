@@ -6,23 +6,53 @@ public class HW2 {
 
     public static void main(String[] args) {
         int n = 15;
-        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.println(Arrays.toString(replace(arr)));
-        int[] arr1 = new int[8];
-//        plusThree(arr1);
-        System.out.println(Arrays.toString(plusThree1(arr1)));
+//        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         int[] arr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(Arrays.toString(more6Multiply2(arr2)));
+        System.out.println(arr2);
         System.out.println(Arrays.toString(more6Multiply2(arr2)));
-        int[] arr4 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println(minElement(arr4));
-        System.out.println(maxElement(arr4));
-        int[][] arr3 = new int[n][n];
-        System.out.println(Arrays.deepToString(diagonal(arr3)));
+        System.out.println("-------");
+        System.out.println(arr2);
+//        int[] arr1 = new int[8];
+////        plusThree(arr1);
+//        System.out.println(Arrays.toString(plusThree1(arr1)));
+//        int[] arr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(Arrays.toString(more6Multiply2(arr2)));
+//        int[] arr4 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        System.out.println(minElement(arr4));
+//        System.out.println(maxElement(arr4));
+//        int[][] arr3 = new int[n][n];
+//        System.out.println(Arrays.deepToString(diagonal(arr3)));
+//
+//        int[] arr5 = {-1, 5, 3, 2, 11, 4, 5, 2, 4, 5, 9, -1};
+//        System.out.println(checkBalance(arr5));
+//        System.out.println(checkBalance1(arr5));
+//        System.out.println("TEST GIT");
+//        int[] arr6 = {1, 2, 3, 4, 5};
+//
+//        System.out.println(Arrays.toString(replaceElement(arr6, -4)));
+    }
 
-        int[] arr5 = {-1, 5, 3, 2, 11, 4, 5, 2, 4, 5, 9, -1};
-        System.out.println(checkBalance(arr5));
-        System.out.println(checkBalance1(arr5));
-        System.out.println("TEST GIT");
+    public static int[] replaceElement(int[] arr, int elemenChange) {
+        if (elemenChange>arr.length){
+            elemenChange = elemenChange%arr.length;
+        }
+        int  change = (arr.length - elemenChange) % arr.length;
+
+        int[] arr1 = Arrays.copyOfRange(arr, change, arr.length);
+        int[] arr2 = Arrays.copyOfRange(arr, 0, change);
+        int[] arr3 = new int[arr.length];
+        for (int i = 0; i < arr3.length; i++) {
+            if (i < (arr.length - change)) {
+                arr3[i] = arr1[i];
+            } else {
+                for (int j = 0; j < change; j++) {
+                    arr3[i] = arr2[j];
+                    i++;
+                }
+            }
+        }
+        return arr3;
     }
 
     public static int[] replace(int[] arr) {
@@ -124,4 +154,19 @@ public class HW2 {
         }
         return false;
     }
+
+//    public static int[] replaceElement(int[] arr, int elemenChange) {
+//        int change = (arr.length + 1 + elemenChange) % (arr.length + 1);
+//        int a = arr[arr.length - 1];
+//        for (int i = 0; i < change; i++) {
+////            for (int j = arr.length; j > 0; j--) {
+////                arr[arr.length - j + 1] = arr[arr.length - j];
+////            }
+//            for (int j = 0; j <arr.length ; j++) {
+//
+//            }
+//            arr[0] = a;
+//        }
+//        return arr;
+//    }
 }
