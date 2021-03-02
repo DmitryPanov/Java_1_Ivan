@@ -4,11 +4,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
+    /*
+      1. Полностью разобраться с кодом урока;
+      2. Переделать проверку победы, чтобы она не была реализована просто набором условий.
+    * 3. Попробовать переписать логику проверки победы, чтобы она работала для поля 5х5 и количества символов 4.
+  *** 4. Доработать искусственный интеллект, чтобы он мог блокировать победу игрока, и пытаться выиграть сам.
+    *
+    * */
     public static final char DOT_HUMAN = 'X';
     public static final char DOT_AI = 'Y';
     public static final char DOT_EMPTY = '*';
-    public static final int FIELD_SIZE_X = 3;
-    public static final int FIELD_SIZE_Y = 3;
+    public static final int FIELD_SIZE_X = 5;
+    public static final int FIELD_SIZE_Y = 5;
+    public static final int DOT_WIN = 4;
     public static char[][] field;
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
@@ -23,25 +31,91 @@ public class TicTacToe {
             if (SCANNER.next().equals("no")) break;
         }
     }
+//    2. Переделать проверку победы, чтобы она не была реализована просто набором условий.
+
+    public static boolean checkWin2(char c) {
+        return horizontWin(c) || verticalWin(c) || diagonalWin(c) || reversDiagonalWin(c);
+
+    }
+
+    public static boolean horizontWin(char c) {
+        int count = 0;
+        for (int y = 0; y < FIELD_SIZE_Y; y++) {
+            for (int x = 0; x < FIELD_SIZE_X; x++) {
+                if (field[y][x] == c) {
+                    count++;
+                } else count = 0;
+                if (count == DOT_WIN) return true;
+            }
+            count = 0;
+        }
+        return false;
+    }
+
+    public static boolean verticalWin(char c) {
+        int count = 0;
+        for (int x = 0; x < FIELD_SIZE_X; x++) {
+            for (int y = 0; y < FIELD_SIZE_Y; y++) {
+                if (field[y][x] == c) {
+                    count++;
+                } else count = 0;
+                if (count == DOT_WIN) return true;
+            }
+            count = 0;
+        }
+        return false;
+    }
+
+    public static boolean diagonalWin(char c) {
+        int count = 0;
+        for (int y = 0; y < FIELD_SIZE_Y; y++) {
+            for (int x = 0; x < FIELD_SIZE_X; x++) {
+                if (field[y][x] == c) {
+                    count++;
+                } else count = 0;
+                if (count == DOT_WIN) return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean reversDiagonalWin(char c) {
+        int count = 0;
+        for (int y = 0; y < FIELD_SIZE_Y; y++) {
+            if (field[y][FIELD_SIZE_Y - y - 1] == c) {
+                count++;
+            } else count = 0;
+            if (count == DOT_WIN) return true;
+        }
+        return false;
+    }
 
     public static void playOnce() {
         while (true) {
             humanTurn();
             printMap();
-            if (checkWin(DOT_HUMAN)) {
+            if (checkWin2(DOT_HUMAN)) {
                 System.out.println("Выйграл человек");
                 break;
             }
+//            if (checkWin(DOT_HUMAN)) {
+//                System.out.println("Выйграл человек");
+//                break;
+//            }
             if (draw()) {
                 System.out.println("Ничья");
                 break;
             }
-            aiTurn();
+            humanTurn2();
             printMap();
-            if (checkWin(DOT_AI)) {
+            if (checkWin2(DOT_AI)) {
                 System.out.println("Выйграл компьютер");
                 break;
             }
+//            if (checkWin(DOT_AI)) {
+//                System.out.println("Выйграл компьютер");
+//                break;
+//            }
             if (draw()) {
                 System.out.println("Ничья");
                 break;
@@ -60,6 +134,18 @@ public class TicTacToe {
             x = SCANNER.nextInt() - 1;
         } while (!isVallidCell(x, y) || !isEmptyCell(x, y));
         field[y][x] = DOT_HUMAN;
+
+    }
+
+    public static void humanTurn2() {
+        int x;
+        int y;
+        do {
+            System.out.println("Введите координаты хода Х и У (от 1 до 3) через пробел");
+            y = SCANNER.nextInt() - 1;
+            x = SCANNER.nextInt() - 1;
+        } while (!isVallidCell(x, y) || !isEmptyCell(x, y));
+        field[y][x] = DOT_AI;
 
     }
 
