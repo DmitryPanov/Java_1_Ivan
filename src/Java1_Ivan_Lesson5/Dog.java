@@ -30,9 +30,9 @@ public class Dog extends Animal {
 
     @Override
     public String jump(double height) {
-        if (height <= heightJumpDog && height >= 0)
+        if (height <= heightJumpDog && height >= 0) {
             return super.jump(height);
-        else return nameDog + " can't jump this height ";
+        } else return nameDog + " can't jump this height ";
     }
 
 }

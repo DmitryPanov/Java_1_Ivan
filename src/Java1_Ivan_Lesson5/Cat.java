@@ -30,4 +30,9 @@ public class Cat extends Animal {
             return super.jump(height);
         else return "Cat can't jump this height ";
     }
+
+    @Override
+    public String test(int aaa) {
+        return " return cat " + super.test(aaa);
+    }
 }

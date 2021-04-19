@@ -33,4 +33,9 @@ public class Bird extends Animal {
             return super.jump(height);
         else return "Bird can't jump this height ";
     }
+
+    @Override
+    public String test(int aaa) {
+        return "I Was right";
+    }
 }

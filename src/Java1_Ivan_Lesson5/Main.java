@@ -26,7 +26,15 @@ public class Main {
     Dog dog = new Dog("Bobik",150);
     Dog dog1 = new Dog("Sharik",155);
     Horse horse = new Horse("Gorbynok");
+    Parrot parrot = new Parrot("Popka");
     System.out.println(cat.getClass());
+
+    Animal [] animal = {bird,cat,dog,horse,parrot};
+        for (int i = 0; i <animal.length ; i++) {
+            System.out.println(animal[i].test(50));
+        }
+
+
 
 //        4.При попытке животного выполнить одно из этих действий, оно должно сообщить результат.
 //        (Например, dog1.run(150); -> результат: 'Пёсик пробежал!')
@@ -36,15 +44,15 @@ public class Main {
 //        System.out.println(cat.swim(5));
 //        System.out.println();
 
-        System.out.println(dog.run(151.2));
-        System.out.println(dog.jump(3));
-        System.out.println(dog.swim(5));
-        System.out.println();
-
-        System.out.println(dog1.run(154.2));
-        System.out.println(dog1.jump(3));
-        System.out.println(dog1.swim(5));
+//        System.out.println(dog.run(151.2));
+//        System.out.println(dog.jump(3));
+//        System.out.println(dog.swim(5));
 //        System.out.println();
+//
+//        System.out.println(dog1.run(156.2));
+//        System.out.println(dog1.jump(3));
+//        System.out.println(dog1.swim(5));
+////        System.out.println();
 //
 //        System.out.println(horse.run(2151.2));
 //        System.out.println(horse.jump(3));

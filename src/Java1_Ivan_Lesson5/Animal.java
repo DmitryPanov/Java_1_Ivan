@@ -19,5 +19,8 @@ public class Animal {
     public String jump (double height){
         return name + " jump " + height;
     }
+    public String test(int aaa){
+        return aaa + " test ";
+    }
 
 }
